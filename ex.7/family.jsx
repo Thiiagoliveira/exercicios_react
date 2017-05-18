@@ -2,6 +2,7 @@ import React from 'react'
 
 export default props => (
     <div>
-        {props.name} <strong>{props.lastName}</strong>
+        <h3>Familia</h3>
+        {props.children}
     </div>
 )
