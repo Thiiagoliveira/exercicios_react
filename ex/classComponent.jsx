@@ -7,9 +7,7 @@ export default class ClassComponent extends Component {
   }
 
   sum(delta) {
-    this.setState({
-      value: this.state.value + delta
-    });
+    this.setState({ value: this.state.value + delta });
   }
 
   render() {
@@ -17,6 +15,8 @@ export default class ClassComponent extends Component {
       <div>
         <h1>{this.props.label}</h1>
         <h2>{this.state.value}</h2>
+        <button onClick={() => this.sum(-1)}>DEC</button>
+        <button onClick={() => this.sum(1)}>INC</button>
       </div>
     );
   }
