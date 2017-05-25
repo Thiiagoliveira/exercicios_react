@@ -1,8 +1,16 @@
 import React from "react";
 import ReactDom from "react-dom";
-import ClassComponent from "./classComponent";
+import { combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import Field from "./field";
+
+const reducers = combineReducers({
+  field: () => ({ value: "OPA" })
+});
 
 ReactDom.render(
-  <ClassComponent label='Contador' initialValue={10} />,
+  <Provider store={createStore(reducers)}>
+    <Field initialValue="Teste" />
+  </Provider>,
   document.getElementById("app")
 );
